@@ -1,0 +1,84 @@
+{
+  "version": 3,
+  "status": "frozen_before_test_access",
+  "stage": 7,
+  "master_seed": 42,
+  "split": {
+    "file": "artifacts/stage3_audit/split.csv",
+    "sha256": "afc68cc9b87b3af225c93b17a9a7fa371edee1e98e0abd43fbdaf693fecbe944",
+    "name": "test",
+    "expected_examples": 4050,
+    "stratified_ratio": 0.15
+  },
+  "class_order": [
+    "AnnualCrop",
+    "Forest",
+    "HerbaceousVegetation",
+    "Highway",
+    "Industrial",
+    "Pasture",
+    "PermanentCrop",
+    "Residential",
+    "River",
+    "SeaLake"
+  ],
+  "cnn_selection_registry": {
+    "file": "artifacts/stage5_cnn_selection/selected_candidate_registry.json",
+    "sha256": "a3a2b96247a4e9be2c24206732deb1b16cdddc8ae6ca0ce43481814c8959092c"
+  },
+  "candidate_order": [
+    "cnn",
+    "mobilenetv2"
+  ],
+  "formal_attempts_considered": {
+    "cnn": 2,
+    "mobilenetv2": 1
+  },
+  "candidates": {
+    "cnn": {
+      "attempt_id": "cnn_attempt_2",
+      "artifact_root": "EUROSAT_PROJECT_DIR",
+      "checkpoint": "artifacts/stage5_cnn_selection/attempts/cnn_attempt_2/selected_checkpoints/epoch_019.keras",
+      "checkpoint_sha256": "ef6162570eb2dbcd21828c84550df18d52f1296ba0aa8a4cbdf6f79dc328711a",
+      "configuration": "artifacts/stage5_cnn_selection/attempts/cnn_attempt_2/run_config.json",
+      "configuration_sha256": "b3ea2b9819afc08017805e3057fc6a3289de25d81cf1ff5e58c76b2a7f1241eb",
+      "validation_f1_macro": 0.8133914043821164,
+      "validation_accuracy": 0.8219752907752991
+    },
+    "mobilenetv2": {
+      "attempt_id": "mobilenetv2_initial_v1",
+      "artifact_root": "EUROSAT_PROJECT_DIR",
+      "checkpoint": "artifacts/stage6_mobilenetv2/attempts/mobilenetv2_initial_v1/selected_checkpoints/epoch_007.keras",
+      "checkpoint_sha256": "cf53508537be532aa975bb4d0d29df5b03f1783a4ea92461c338598156cbd95a",
+      "configuration": "artifacts/stage6_mobilenetv2/attempts/mobilenetv2_initial_v1/run_config.json",
+      "configuration_sha256": "eea02731b53ea5960218b9602b97d086eb9950779ecdc84d2447c666b263888c",
+      "validation_f1_macro": 0.8764369860266701,
+      "validation_accuracy": 0.8812345862388611
+    }
+  },
+  "prediction_rule": "argmax_over_softmax_scores",
+  "softmax_interpretation": "uncalibrated_class_scores",
+  "metrics": [
+    "accuracy",
+    "macro_f1",
+    "per_class_precision",
+    "per_class_recall",
+    "per_class_f1",
+    "per_class_support",
+    "confusion_matrix"
+  ],
+  "zero_division": 0,
+  "error_sampling": {
+    "ordered_confusion_pairs_per_model": 3,
+    "examples_per_pair": 3,
+    "pair_order": "descending_count_then_true_index_then_predicted_index",
+    "example_order": "sha256(master_seed|model|relative_path)"
+  },
+  "inference_demonstration": {
+    "origin": "reserved_eurosat_test_split",
+    "examples": "one_per_class",
+    "selection": "lowest_sha256(master_seed|demo|relative_path)_per_class",
+    "external_independent_evaluation": false
+  },
+  "test_feedback_policy": "No model, checkpoint, preprocessing, split, or hyperparameter change may be motivated by the test results."
+}

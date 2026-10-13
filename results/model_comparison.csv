@@ -1,0 +1,3 @@
+model,attempt_id,test_accuracy,test_f1_macro,test_mean_negative_log_likelihood,training_seconds,epochs_completed,total_parameters,trainable_parameters,test_inference_seconds
+cnn,cnn_attempt_2,0.8175308641975308,0.8081781485267093,0.5069269597814811,327.80967778600007,20,111050,111050,1.999723283999856
+mobilenetv2,mobilenetv2_initial_v1,0.8720987654320987,0.867186737320521,0.3883765672496064,367.0575543909988,12,2270794,12810,12.021579928000165

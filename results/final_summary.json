@@ -1,0 +1,233 @@
+{
+  "status": "stage7_completed",
+  "protocol_sha256": "ffa2be134d6efefab17ee279b667b01de3dc26fc3717ecabd830b2f8777a5df9",
+  "test_examples": 4050,
+  "class_order": [
+    "AnnualCrop",
+    "Forest",
+    "HerbaceousVegetation",
+    "Highway",
+    "Industrial",
+    "Pasture",
+    "PermanentCrop",
+    "Residential",
+    "River",
+    "SeaLake"
+  ],
+  "candidates": {
+    "cnn": {
+      "attempt_id": "cnn_attempt_2",
+      "artifact_root": "EUROSAT_PROJECT_DIR",
+      "checkpoint": "artifacts/stage5_cnn_selection/attempts/cnn_attempt_2/selected_checkpoints/epoch_019.keras",
+      "checkpoint_sha256": "ef6162570eb2dbcd21828c84550df18d52f1296ba0aa8a4cbdf6f79dc328711a",
+      "configuration": "artifacts/stage5_cnn_selection/attempts/cnn_attempt_2/run_config.json",
+      "configuration_sha256": "b3ea2b9819afc08017805e3057fc6a3289de25d81cf1ff5e58c76b2a7f1241eb",
+      "validation_f1_macro": 0.8133914043821164,
+      "validation_accuracy": 0.8219752907752991
+    },
+    "mobilenetv2": {
+      "attempt_id": "mobilenetv2_initial_v1",
+      "artifact_root": "EUROSAT_PROJECT_DIR",
+      "checkpoint": "artifacts/stage6_mobilenetv2/attempts/mobilenetv2_initial_v1/selected_checkpoints/epoch_007.keras",
+      "checkpoint_sha256": "cf53508537be532aa975bb4d0d29df5b03f1783a4ea92461c338598156cbd95a",
+      "configuration": "artifacts/stage6_mobilenetv2/attempts/mobilenetv2_initial_v1/run_config.json",
+      "configuration_sha256": "eea02731b53ea5960218b9602b97d086eb9950779ecdc84d2447c666b263888c",
+      "validation_f1_macro": 0.8764369860266701,
+      "validation_accuracy": 0.8812345862388611
+    }
+  },
+  "test_metrics": {
+    "cnn": {
+      "accuracy": 0.8175308641975308,
+      "f1_macro": 0.8081781485267093,
+      "mean_negative_log_likelihood": 0.5069269597814811,
+      "inference_seconds": 1.999723283999856
+    },
+    "mobilenetv2": {
+      "accuracy": 0.8720987654320987,
+      "f1_macro": 0.867186737320521,
+      "mean_negative_log_likelihood": 0.3883765672496064,
+      "inference_seconds": 12.021579928000165
+    }
+  },
+  "mobilenetv2_minus_cnn": {
+    "accuracy": 0.054567901234567895,
+    "f1_macro": 0.059008588793811656,
+    "training_seconds": 39.24787660499874
+  },
+  "descriptive_higher_test_f1_model": "mobilenetv2",
+  "statistical_superiority_claimed": false,
+  "formal_attempts_per_model": {
+    "cnn": 2,
+    "mobilenetv2": 1
+  },
+  "cost_scope": "Training time of the selected candidate for each model; technical probes and human time are excluded. Both selected runs used Tesla T4, but their TensorFlow versions differ.",
+  "error_analysis": {
+    "status": "deterministic_error_analysis_completed",
+    "protocol_sha256": "ffa2be134d6efefab17ee279b667b01de3dc26fc3717ecabd830b2f8777a5df9",
+    "sampling_rule": {
+      "ordered_confusion_pairs_per_model": 3,
+      "examples_per_pair": 3,
+      "pair_order": "descending_count_then_true_index_then_predicted_index",
+      "example_order": "sha256(master_seed|model|relative_path)"
+    },
+    "top_ordered_confusions": {
+      "cnn": [
+        {
+          "true_class_index": 8,
+          "true_class_name": "River",
+          "predicted_class_index": 3,
+          "predicted_class_name": "Highway",
+          "count": 67
+        },
+        {
+          "true_class_index": 6,
+          "true_class_name": "PermanentCrop",
+          "predicted_class_index": 2,
+          "predicted_class_name": "HerbaceousVegetation",
+          "count": 58
+        },
+        {
+          "true_class_index": 6,
+          "true_class_name": "PermanentCrop",
+          "predicted_class_index": 3,
+          "predicted_class_name": "Highway",
+          "count": 54
+        }
+      ],
+      "mobilenetv2": [
+        {
+          "true_class_index": 8,
+          "true_class_name": "River",
+          "predicted_class_index": 3,
+          "predicted_class_name": "Highway",
+          "count": 36
+        },
+        {
+          "true_class_index": 3,
+          "true_class_name": "Highway",
+          "predicted_class_index": 8,
+          "predicted_class_name": "River",
+          "count": 32
+        },
+        {
+          "true_class_index": 6,
+          "true_class_name": "PermanentCrop",
+          "predicted_class_index": 2,
+          "predicted_class_name": "HerbaceousVegetation",
+          "count": 29
+        }
+      ]
+    },
+    "prediction_overlap": {
+      "both_correct": 3007,
+      "both_wrong": 214,
+      "cnn_wrong_mobilenet_correct": 525,
+      "cnn_correct_mobilenet_wrong": 304,
+      "total": 4050
+    },
+    "selected_examples": "artifacts/stage7_final_evaluation/error_examples.csv",
+    "selected_example_count": 18,
+    "visual_interpretation": "hypotheses_only_not_proven_causes",
+    "test_set_used": true
+  },
+  "inference_demonstration": {
+    "status": "checkpoint_reload_and_inference_verified",
+    "protocol_sha256": "ffa2be134d6efefab17ee279b667b01de3dc26fc3717ecabd830b2f8777a5df9",
+    "origin": "reserved_eurosat_test_split",
+    "external_independent_evaluation": false,
+    "selection_rule": "lowest_sha256(master_seed|demo|relative_path)_per_class",
+    "examples": [
+      {
+        "relative_path": "AnnualCrop/AnnualCrop_2279.jpg",
+        "true_class_index": 0,
+        "true_class_name": "AnnualCrop"
+      },
+      {
+        "relative_path": "Forest/Forest_1776.jpg",
+        "true_class_index": 1,
+        "true_class_name": "Forest"
+      },
+      {
+        "relative_path": "HerbaceousVegetation/HerbaceousVegetation_1825.jpg",
+        "true_class_index": 2,
+        "true_class_name": "HerbaceousVegetation"
+      },
+      {
+        "relative_path": "Highway/Highway_551.jpg",
+        "true_class_index": 3,
+        "true_class_name": "Highway"
+      },
+      {
+        "relative_path": "Industrial/Industrial_1455.jpg",
+        "true_class_index": 4,
+        "true_class_name": "Industrial"
+      },
+      {
+        "relative_path": "Pasture/Pasture_22.jpg",
+        "true_class_index": 5,
+        "true_class_name": "Pasture"
+      },
+      {
+        "relative_path": "PermanentCrop/PermanentCrop_2405.jpg",
+        "true_class_index": 6,
+        "true_class_name": "PermanentCrop"
+      },
+      {
+        "relative_path": "Residential/Residential_278.jpg",
+        "true_class_index": 7,
+        "true_class_name": "Residential"
+      },
+      {
+        "relative_path": "River/River_2061.jpg",
+        "true_class_index": 8,
+        "true_class_name": "River"
+      },
+      {
+        "relative_path": "SeaLake/SeaLake_1492.jpg",
+        "true_class_index": 9,
+        "true_class_name": "SeaLake"
+      }
+    ],
+    "models": {
+      "cnn": {
+        "artifact_root": "EUROSAT_PROJECT_DIR",
+        "checkpoint": "artifacts/stage5_cnn_selection/attempts/cnn_attempt_2/selected_checkpoints/epoch_019.keras",
+        "checkpoint_sha256": "ef6162570eb2dbcd21828c84550df18d52f1296ba0aa8a4cbdf6f79dc328711a",
+        "reloaded": true,
+        "max_prediction_difference_vs_persisted_test_predictions": 1.043081283569336e-07,
+        "verified": true
+      },
+      "mobilenetv2": {
+        "artifact_root": "EUROSAT_PROJECT_DIR",
+        "checkpoint": "artifacts/stage6_mobilenetv2/attempts/mobilenetv2_initial_v1/selected_checkpoints/epoch_007.keras",
+        "checkpoint_sha256": "cf53508537be532aa975bb4d0d29df5b03f1783a4ea92461c338598156cbd95a",
+        "reloaded": true,
+        "max_prediction_difference_vs_persisted_test_predictions": 3.337860107421875e-06,
+        "verified": true
+      }
+    },
+    "figure": "artifacts/stage7_final_evaluation/figures/inference_demonstration.png",
+    "test_set_used": true
+  },
+  "artifacts": {
+    "protocol": "artifacts/stage7_final_evaluation/evaluation_protocol.json",
+    "metrics": "artifacts/stage7_final_evaluation/test_metrics.json",
+    "per_class_metrics": "artifacts/stage7_final_evaluation/per_class_metrics.csv",
+    "comparison": "artifacts/stage7_final_evaluation/model_comparison.csv",
+    "confusion_matrices": "artifacts/stage7_final_evaluation/figures/confusion_matrices.png",
+    "error_examples": "artifacts/stage7_final_evaluation/error_examples.csv",
+    "error_figure": "artifacts/stage7_final_evaluation/figures/deterministic_error_examples.png",
+    "demonstration": "artifacts/stage7_final_evaluation/inference_demonstration.json"
+  },
+  "limitations": [
+    "Two CNN attempts and one MobileNetV2 attempt do not establish statistical superiority.",
+    "Selected training times used different TensorFlow versions and are descriptive only.",
+    "The random split does not demonstrate generalization to unseen regions.",
+    "The architectures, initialization, and training regimes differ; the design does not isolate only ImageNet pretraining.",
+    "Softmax scores were not calibrated.",
+    "Test images are not an external independent dataset."
+  ],
+  "test_set_used": true,
+  "no_test_driven_adjustment": true
+}

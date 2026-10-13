@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "status": "approved_formal_attempt",
+  "purpose": "second_formal_attempt_with_explicit_t4_execution_evidence",
+  "attempt_id": "cnn_attempt_2",
+  "attempt_number": 2,
+  "maximum_formal_attempts": 3,
+  "model": "simple_cnn_from_scratch",
+  "seed": 42,
+  "image_size": [
+    64,
+    64
+  ],
+  "batch_size": 64,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "loss": "sparse_categorical_crossentropy",
+  "max_epochs": 20,
+  "early_stopping_patience": 5,
+  "checkpoint_selection": [
+    "highest_validation_macro_f1",
+    "lowest_validation_loss",
+    "earliest_epoch"
+  ],
+  "attempt_selection": [
+    "highest_validation_macro_f1",
+    "lowest_validation_loss",
+    "lowest_measured_training_time"
+  ],
+  "augmentation": false,
+  "initialization": "clean_random_initialization",
+  "required_accelerator_name_contains": "T4",
+  "t4_confirmed_before_training": true,
+  "technical_checkpoint_loaded": false,
+  "original_checkpoint_loaded": false,
+  "split_file": "artifacts/stage3_audit/split.csv",
+  "split_sha256": "afc68cc9b87b3af225c93b17a9a7fa371edee1e98e0abd43fbdaf693fecbe944",
+  "train_examples": 18900,
+  "validation_examples": 4050,
+  "reference_attempt": {
+    "attempt_id": "cnn_attempt_1",
+    "checkpoint_sha256": "34956924518739f93aeba2f2d9964e5dc0644bc86c64bd32b665c585addc3248",
+    "read_only": true
+  },
+  "artifact_root": "EUROSAT_PROJECT_DIR",
+  "test_set_used": false
+}

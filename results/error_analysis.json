@@ -1,0 +1,69 @@
+{
+  "status": "deterministic_error_analysis_completed",
+  "protocol_sha256": "ffa2be134d6efefab17ee279b667b01de3dc26fc3717ecabd830b2f8777a5df9",
+  "sampling_rule": {
+    "ordered_confusion_pairs_per_model": 3,
+    "examples_per_pair": 3,
+    "pair_order": "descending_count_then_true_index_then_predicted_index",
+    "example_order": "sha256(master_seed|model|relative_path)"
+  },
+  "top_ordered_confusions": {
+    "cnn": [
+      {
+        "true_class_index": 8,
+        "true_class_name": "River",
+        "predicted_class_index": 3,
+        "predicted_class_name": "Highway",
+        "count": 67
+      },
+      {
+        "true_class_index": 6,
+        "true_class_name": "PermanentCrop",
+        "predicted_class_index": 2,
+        "predicted_class_name": "HerbaceousVegetation",
+        "count": 58
+      },
+      {
+        "true_class_index": 6,
+        "true_class_name": "PermanentCrop",
+        "predicted_class_index": 3,
+        "predicted_class_name": "Highway",
+        "count": 54
+      }
+    ],
+    "mobilenetv2": [
+      {
+        "true_class_index": 8,
+        "true_class_name": "River",
+        "predicted_class_index": 3,
+        "predicted_class_name": "Highway",
+        "count": 36
+      },
+      {
+        "true_class_index": 3,
+        "true_class_name": "Highway",
+        "predicted_class_index": 8,
+        "predicted_class_name": "River",
+        "count": 32
+      },
+      {
+        "true_class_index": 6,
+        "true_class_name": "PermanentCrop",
+        "predicted_class_index": 2,
+        "predicted_class_name": "HerbaceousVegetation",
+        "count": 29
+      }
+    ]
+  },
+  "prediction_overlap": {
+    "both_correct": 3007,
+    "both_wrong": 214,
+    "cnn_wrong_mobilenet_correct": 525,
+    "cnn_correct_mobilenet_wrong": 304,
+    "total": 4050
+  },
+  "selected_examples": "artifacts/stage7_final_evaluation/error_examples.csv",
+  "selected_example_count": 18,
+  "visual_interpretation": "hypotheses_only_not_proven_causes",
+  "test_set_used": true
+}

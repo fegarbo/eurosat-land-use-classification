@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "status": "approved_for_formal_training",
+  "attempt_id": "mobilenetv2_initial_v1",
+  "attempt_number": 1,
+  "maximum_formal_attempts": 3,
+  "model": "MobileNetV2_ImageNet_frozen_base",
+  "implementation": "tf.keras.applications.MobileNetV2",
+  "weights": "imagenet",
+  "include_top": false,
+  "seed": 42,
+  "image_size": [
+    64,
+    64
+  ],
+  "batch_size": 64,
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "loss": "sparse_categorical_crossentropy",
+  "max_epochs": 20,
+  "early_stopping_patience": 5,
+  "checkpoint_selection": [
+    "highest_validation_macro_f1",
+    "lowest_validation_loss",
+    "earliest_epoch"
+  ],
+  "augmentation": false,
+  "preprocessing": "pixels_[0,255]_to_[-1,1]_inside_model",
+  "base_trainable": false,
+  "base_call_training": false,
+  "head": "GlobalAveragePooling2D_Dropout0.20_Dense10_softmax",
+  "technical_checkpoint_loaded": false,
+  "split_file": "artifacts/stage3_audit/split.csv",
+  "split_sha256": "afc68cc9b87b3af225c93b17a9a7fa371edee1e98e0abd43fbdaf693fecbe944",
+  "train_examples": 18900,
+  "validation_examples": 4050,
+  "cnn_candidate": "artifacts/stage5_cnn/selected_candidate.json",
+  "cnn_training_accelerator": "T4 GPU",
+  "test_set_used": false
+}

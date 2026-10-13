@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "algorithm": "sha256_rank_per_class_v1",
+  "ranking_definition": "sha256(f'{seed}|{relative_path}') per class",
+  "allocation_definition": "floor(0.70*n), floor(0.15*n), remainder to test",
+  "class_order": [
+    "AnnualCrop",
+    "Forest",
+    "HerbaceousVegetation",
+    "Highway",
+    "Industrial",
+    "Pasture",
+    "PermanentCrop",
+    "Residential",
+    "River",
+    "SeaLake"
+  ],
+  "duplicate_policy": "keep lexicographically first decoded-pixel duplicate within same label"
+}

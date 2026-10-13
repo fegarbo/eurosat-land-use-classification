@@ -1,0 +1,46 @@
+# Dataset e extrações
+data/raw/
+data/extracted/
+EuroSAT_RGB.zip
+2750/
+
+# Modelos e artefatos binários de treinamento
+*.keras
+*.h5
+*.ckpt
+*.ckpt.*
+artifacts/**/selected_checkpoints/
+artifacts/**/training_backup/
+artifacts/**/predictions/
+artifacts/**/validation_predictions.csv
+
+# Logs, caches e temporários
+logs/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+*.tmp
+*.temp
+.cache/
+.pytest_cache/
+
+# Ambientes locais
+.venv/
+venv/
+env/
+
+# Segredos e configurações privadas
+.env
+.env.*
+!.env.example
+credentials*.json
+service-account*.json
+*.pem
+*.key
+
+# Sistema operacional e IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.code-workspace

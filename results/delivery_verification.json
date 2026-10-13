@@ -1,0 +1,47 @@
+{
+  "status": "stage8_completed",
+  "completed_on": "2026-10-12",
+  "notebook": {
+    "path": "notebooks/EuroSAT_Trabalho_PAI.ipynb",
+    "source_sha256_before_editorial_consolidation": "16125462d7d945c4eb95cd172b7a833561d53c48e5faf1054f7ef9ec96830c8b",
+    "final_sha256": "7b246f0a50ff1eba042dc5ff0f84a944a0ceecec052249fd13f62c52a7b5db2e",
+    "code_cells": 23,
+    "executed_code_cells": 23,
+    "error_outputs": 0,
+    "code_sources_unchanged": true,
+    "code_outputs_unchanged": true,
+    "account_metadata_removed": true
+  },
+  "experimental_integrity": {
+    "selected_candidates": {
+      "cnn": "cnn_attempt_2",
+      "mobilenetv2": "mobilenetv2_initial_v1"
+    },
+    "test_examples": 4050,
+    "checkpoint_reload_verified": {
+      "cnn": true,
+      "mobilenetv2": true
+    },
+    "no_test_driven_adjustment": true,
+    "statistical_superiority_claimed": false
+  },
+  "reproduction": {
+    "checkpoint_reload_and_metric_recomputation_verified": true,
+    "full_retraining_during_stage8": false
+  },
+  "public_package": {
+    "raw_dataset_included": false,
+    "model_checkpoints_included": false,
+    "temporary_files_included": false,
+    "credentials_detected": false,
+    "private_storage_urls_detected": false,
+    "personal_paths_detected": false,
+    "publication_performed": false,
+    "license_selected": false
+  },
+  "artifact_sha256": {
+    "final_summary": "4fc56ff8c8764d55972a982f67051481a8b7151d0222f0e0fd0150de4ed9d70c",
+    "evaluation_protocol": "2c3c36613b3968a06c34f4d9e9b58dddad3aa170e3c5d49a86b897fd45f18650",
+    "stage3_audit_source": "e30e7b6e359c430297ea012024f4decc531242b2e69c6dc8a89f33f87a448b87"
+  }
+}

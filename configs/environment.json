@@ -1,0 +1,23 @@
+{
+  "final_evaluation_environment": {
+    "python": "3.13.15",
+    "tensorflow": "2.21.0",
+    "keras": "3.13.2",
+    "scikit_learn": "1.6.1",
+    "numpy": "2.1.3",
+    "matplotlib": "3.10.0",
+    "pillow": "11.3.0",
+    "accelerator": "Tesla T4"
+  },
+  "selected_training_runs": {
+    "cnn": {
+      "tensorflow": "2.21.0",
+      "accelerator": "Tesla T4"
+    },
+    "mobilenetv2": {
+      "tensorflow": "2.20.0",
+      "accelerator": "Tesla T4"
+    }
+  },
+  "time_comparison_scope": "descriptive_same_t4_different_tensorflow_versions"
+}
